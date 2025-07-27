@@ -1,0 +1,330 @@
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #4895ef;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --success-color: #4cc9f0;
+    --warning-color: #f72585;
+    --card-bg: rgba(255, 255, 255, 0.15);
+    --text-color: #ffffff;
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(67, 97, 238, 0.1), rgba(72, 149, 239, 0.1));
+    z-index: -1;
+    animation: gradientShift 15s ease infinite;
+    background-size: 200% 200%;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.search-bar {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 15px 20px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar:focus {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.search-btn {
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.search-btn i {
+    font-size: 18px;
+}
+
+.weather-header {
+    margin-bottom: 30px;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.location i {
+    margin-right: 10px;
+    color: var(--accent-color);
+    font-size: 20px;
+}
+
+.city {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.date {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+}
+
+.weather-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.temperature {
+    display: flex;
+    flex-direction: column;
+}
+
+.temp {
+    font-size: 72px;
+    font-weight: 300;
+    line-height: 1;
+    margin: 0;
+    position: relative;
+}
+
+.temp::after {
+    content: "°";
+    position: absolute;
+    top: 0;
+}
+
+.temp-range {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.high, .low {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.high {
+    color: var(--warning-color);
+}
+
+.low {
+    color: var(--success-color);
+}
+
+.weather-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.description {
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.weather-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.detail {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.detail:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.detail i {
+    font-size: 24px;
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+.value {
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+}
+
+.label {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    display: block;
+}
+
+.weather-forecast {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.forecast-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.forecast-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.forecast-item img {
+    width: 40px;
+    height: 40px;
+    margin: 5px 0;
+}
+
+.day {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.forecast-temp {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.weather.loading {
+    visibility: hidden;
+    position: relative;
+}
+
+.weather.loading::after {
+    visibility: visible;
+    content: "Loading weather data...";
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .card {
+        padding: 20px;
+    }
+    
+    .temp {
+        font-size: 60px;
+    }
+    
+    .weather-details {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .weather-forecast {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

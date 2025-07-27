@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="container">
+        <div class="card">
+            <div class="search">
+                <input type="text" class="search-bar" placeholder="Search city...">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            
+            <div class="weather loading">
+                <div class="weather-header">
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h2 class="city">CloudyVille</h2>
+                    </div>
+                    <div class="date" id="date">Monday, June 5</div>
+                </div>
+                
+                <div class="weather-main">
+                    <div class="temperature">
+                        <h1 class="temp">30°C</h1>
+                        <div class="temp-range">
+                            <span class="high">H:32°</span>
+                            <span class="low">L:28°</span>
+                        </div>
+                    </div>
+                    <div class="weather-icon">
+                        <img src="http://openweathermap.org/img/wn/04n.png" alt="Weather icon" class="icon">
+                        <div class="description">Cloudy</div>
+                    </div>
+                </div>
+                
+                <div class="weather-details">
+                    <div class="detail">
+                        <i class="fas fa-tint"></i>
+                        <div>
+                            <span class="value humidity">70%</span>
+                            <span class="label">Humidity</span>
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <i class="fas fa-wind"></i>
+                        <div>
+                            <span class="value wind">6 km/h</span>
+                            <span class="label">Wind</span>
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <i class="fas fa-compress-alt"></i>
+                        <div>
+                            <span class="value pressure">1012 hPa</span>
+                            <span class="label">Pressure</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="weather-forecast">
+                    <div class="forecast-item">
+                        <div class="day">Tue</div>
+                        <img src="http://openweathermap.org/img/wn/01d.png" alt="Sunny">
+                        <div class="forecast-temp">31°</div>
+                    </div>
+                    <div class="forecast-item">
+                        <div class="day">Wed</div>
+                        <img src="http://openweathermap.org/img/wn/02d.png" alt="Partly cloudy">
+                        <div class="forecast-temp">29°</div>
+                    </div>
+                    <div class="forecast-item">
+                        <div class="day">Thu</div>
+                        <img src="http://openweathermap.org/img/wn/03d.png" alt="Cloudy">
+                        <div class="forecast-temp">28°</div>
+                    </div>
+                    <div class="forecast-item">
+                        <div class="day">Fri</div>
+                        <img src="http://openweathermap.org/img/wn/09d.png" alt="Rain">
+                        <div class="forecast-temp">27°</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
